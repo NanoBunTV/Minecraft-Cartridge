@@ -1,0 +1,129 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:select",
+          "property": "cartridge_mod:cartridge_shape",
+          "cases": [
+            {
+              "when": "cartridge_16bit",
+              "model": {
+                "type": "minecraft:model",
+                "model": "cartridge_mod:item/cartridge_16bit_icon"
+              }
+            },
+            {
+              "when": "cartridge_vortex",
+              "model": {
+                "type": "minecraft:model",
+                "model": "cartridge_mod:item/cartridge_vortex_icon"
+              }
+            },
+            {
+              "when": "cartridge_pocketron",
+              "model": {
+                "type": "minecraft:model",
+                "model": "cartridge_mod:item/cartridge_pocketron_icon"
+              }
+            },
+            {
+              "when": "cartridge_pocketron_dual",
+              "model": {
+                "type": "minecraft:model",
+                "model": "cartridge_mod:item/cartridge_pocketron_dual_icon"
+              }
+            },
+            {
+              "when": "cartridge_pocketron_color",
+              "model": {
+                "type": "minecraft:model",
+                "model": "cartridge_mod:item/cartridge_pocketron_color_icon"
+              }
+            },
+            {
+              "when": "cartridge_advance",
+              "model": {
+                "type": "minecraft:model",
+                "model": "cartridge_mod:item/cartridge_advance_icon"
+              }
+            },
+            {
+              "when": "cartridge_64",
+              "model": {
+                "type": "minecraft:model",
+                "model": "cartridge_mod:item/cartridge_64_icon"
+              }
+            }
+          ],
+          "fallback": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_icon"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:select",
+      "property": "cartridge_mod:cartridge_shape",
+      "cases": [
+        {
+          "when": "cartridge_16bit",
+          "model": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_16bit"
+          }
+        },
+        {
+          "when": "cartridge_vortex",
+          "model": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_vortex"
+          }
+        },
+        {
+          "when": "cartridge_pocketron",
+          "model": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_pocketron"
+          }
+        },
+        {
+          "when": "cartridge_pocketron_dual",
+          "model": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_pocketron_dual"
+          }
+        },
+        {
+          "when": "cartridge_pocketron_color",
+          "model": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_pocketron_color"
+          }
+        },
+        {
+          "when": "cartridge_advance",
+          "model": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_advance"
+          }
+        },
+        {
+          "when": "cartridge_64",
+          "model": {
+            "type": "minecraft:model",
+            "model": "cartridge_mod:item/cartridge_64"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "cartridge_mod:item/cartridge"
+      }
+    }
+  }
+}

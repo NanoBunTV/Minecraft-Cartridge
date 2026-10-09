@@ -1,0 +1,13 @@
+{
+  "values": [
+    "cartridge_mod:crt_tv",
+    "cartridge_mod:flatscreen_tv",
+    "cartridge_mod:large_flatscreen_tv",
+    "cartridge_mod:display_panel",
+    "cartridge_mod:console_8bit",
+    "cartridge_mod:console_16bit",
+    "cartridge_mod:console_vortex",
+    "cartridge_mod:console_64",
+    "cartridge_mod:cartridge_writer"
+  ]
+}

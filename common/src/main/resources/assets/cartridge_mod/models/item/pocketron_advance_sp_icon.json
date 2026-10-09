@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "cartridge_mod:item/pocketron_advance_sp",
+		"layer1": "cartridge_mod:item/pocketron_advance_sp_parts"
+	}
+}

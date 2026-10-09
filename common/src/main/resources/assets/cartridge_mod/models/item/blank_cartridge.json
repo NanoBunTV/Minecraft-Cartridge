@@ -1,0 +1,6 @@
+{
+	"parent": "cartridge_mod:item/cartridge",
+	"textures": {
+		"label": "cartridge_mod:item/blank_cartridge_label"
+	}
+}

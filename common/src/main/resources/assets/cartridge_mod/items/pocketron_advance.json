@@ -1,0 +1,43 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:model",
+          "model": "cartridge_mod:item/pocketron_advance_icon",
+          "tints": [
+            {
+              "type": "minecraft:dye",
+              "default": -11911270
+            }
+          ]
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:composite",
+      "models": [
+        {
+          "type": "minecraft:model",
+          "model": "cartridge_mod:item/pocketron_advance",
+          "tints": [
+            {
+              "type": "minecraft:dye",
+              "default": -11911270
+            }
+          ]
+        },
+        {
+          "type": "minecraft:special",
+          "base": "cartridge_mod:item/pocketron_advance",
+          "model": {
+            "type": "cartridge_mod:handheld_screen"
+          }
+        }
+      ]
+    }
+  }
+}

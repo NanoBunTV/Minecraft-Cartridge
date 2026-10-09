@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "B": {
+      "tag": "minecraft:buttons"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "K": {
+      "item": "minecraft:gray_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " SB",
+    "BKB",
+    "IRI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cartridge_mod:controller_64"
+  }
+}

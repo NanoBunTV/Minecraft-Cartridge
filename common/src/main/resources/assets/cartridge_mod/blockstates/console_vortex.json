@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "cartridge_mod:block/console_vortex"
+		},
+		"facing=east": {
+			"model": "cartridge_mod:block/console_vortex",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "cartridge_mod:block/console_vortex",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "cartridge_mod:block/console_vortex",
+			"y": 270
+		}
+	}
+}

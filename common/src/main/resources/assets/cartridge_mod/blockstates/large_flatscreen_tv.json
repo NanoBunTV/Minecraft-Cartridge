@@ -1,0 +1,304 @@
+{
+	"variants": {
+		"column=0,facing=north,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=north,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=north,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand"
+		},
+		"column=1,facing=north,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=north,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=north,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=north,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand_lit"
+		},
+		"column=1,facing=north,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=north,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=north,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=north,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall"
+		},
+		"column=1,facing=north,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=north,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=north,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=north,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall_lit"
+		},
+		"column=1,facing=north,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=north,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=east,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand",
+			"y": 90
+		},
+		"column=1,facing=east,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=east,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand_lit",
+			"y": 90
+		},
+		"column=1,facing=east,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=east,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall",
+			"y": 90
+		},
+		"column=1,facing=east,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=east,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=east,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall_lit",
+			"y": 90
+		},
+		"column=1,facing=east,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=east,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=south,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand",
+			"y": 180
+		},
+		"column=1,facing=south,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=south,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand_lit",
+			"y": 180
+		},
+		"column=1,facing=south,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=south,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall",
+			"y": 180
+		},
+		"column=1,facing=south,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=south,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=south,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall_lit",
+			"y": 180
+		},
+		"column=1,facing=south,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=south,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=west,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand",
+			"y": 270
+		},
+		"column=1,facing=west,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=false,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=false,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=west,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_stand_lit",
+			"y": 270
+		},
+		"column=1,facing=west,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=true,mount=stand,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=true,mount=stand,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=west,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall",
+			"y": 270
+		},
+		"column=1,facing=west,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=false,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=false,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=0,facing=west,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=1,facing=west,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_wall_lit",
+			"y": 270
+		},
+		"column=1,facing=west,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=true,mount=wall,row=0": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		},
+		"column=2,facing=west,lit=true,mount=wall,row=1": {
+			"model": "cartridge_mod:block/large_flatscreen_tv_part"
+		}
+	}
+}

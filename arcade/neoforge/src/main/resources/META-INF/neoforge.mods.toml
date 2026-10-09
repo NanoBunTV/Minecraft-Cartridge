@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+${neoforge_icon_key} = "${mod_icon}"
+displayURL = "https://modrinth.com/mod/${mod_slug}"
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neoforge_range}"
+ordering = "NONE"
+side = "BOTH"
+
+# Cartridge's console kinds and controls come first, then the add-on's (D195).
+[[dependencies.${mod_id}]]
+modId = "cartridge_mod"
+type = "required"
+versionRange = "[${cartridge_version},)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${mc_compat_neoforge}"
+ordering = "NONE"
+side = "BOTH"

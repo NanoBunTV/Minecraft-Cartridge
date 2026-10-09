@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "cartridge_arcade:arcade_cabinet"
+    },
+    {
+      "item": "cartridge_arcade:arcade_cabinet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "cartridge_arcade:arcade_cabinet_2p"
+  }
+}

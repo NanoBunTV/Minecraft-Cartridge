@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "cartridge_mod:item/console_8bit"
+  }
+}

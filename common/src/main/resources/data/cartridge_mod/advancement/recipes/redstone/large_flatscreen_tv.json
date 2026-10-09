@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flatscreen_tv": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cartridge_mod:flatscreen_tv"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cartridge_mod:large_flatscreen_tv"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flatscreen_tv"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cartridge_mod:large_flatscreen_tv"
+    ]
+  }
+}

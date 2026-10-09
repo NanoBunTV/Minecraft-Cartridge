@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nanobuntv.cartridge.mixin",
+  "compatibilityLevel": "JAVA_${mixin_java}",
+  ${mixin_refmap}
+  "mixins": [],
+  "client": [${mixins_client}],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

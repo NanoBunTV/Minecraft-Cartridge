@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "N": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CRC",
+    " N "
+  ],
+  "result": {
+    "count": 4,
+    "id": "cartridge_mod:blank_cartridge"
+  }
+}

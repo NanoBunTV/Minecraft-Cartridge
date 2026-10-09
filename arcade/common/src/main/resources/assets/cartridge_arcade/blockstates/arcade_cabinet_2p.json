@@ -1,0 +1,55 @@
+{
+  "variants": {
+    "column=0,facing=north,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_2p"
+    },
+    "column=0,facing=north,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=north,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=north,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=0,facing=east,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_2p",
+      "y": 90
+    },
+    "column=0,facing=east,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=east,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=east,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=0,facing=south,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_2p",
+      "y": 180
+    },
+    "column=0,facing=south,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=south,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=south,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=0,facing=west,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_2p",
+      "y": 270
+    },
+    "column=0,facing=west,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=west,row=0": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    },
+    "column=1,facing=west,row=1": {
+      "model": "cartridge_arcade:block/arcade_cabinet_part"
+    }
+  }
+}

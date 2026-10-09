@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cartridge_mod:block/cartridge_writer"
+    },
+    "facing=east": {
+      "model": "cartridge_mod:block/cartridge_writer",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cartridge_mod:block/cartridge_writer",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cartridge_mod:block/cartridge_writer",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,532 @@
+{
+	"parent": "minecraft:block/block",
+	"credit": "NanoBunTV",
+	"textures": {
+		"0": "cartridge_mod:block/cartridge_writer_casing",
+		"1": "cartridge_mod:block/cartridge_writer_side",
+		"2": "cartridge_mod:block/cartridge_writer_front",
+		"3": "cartridge_mod:block/cartridge_writer_socket",
+		"4": "cartridge_mod:block/cartridge_writer_parts",
+		"5": "cartridge_mod:block/cartridge_writer_cable",
+		"particle": "cartridge_mod:block/cartridge_writer_casing"
+	},
+	"elements": [
+		{
+			"name": "body",
+			"from": [
+				1,
+				0,
+				2
+			],
+			"to": [
+				15,
+				6,
+				14
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						1,
+						10,
+						15,
+						16
+					],
+					"texture": "#2"
+				},
+				"east": {
+					"uv": [
+						2,
+						10,
+						14,
+						16
+					],
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [
+						1,
+						1,
+						15,
+						7
+					],
+					"texture": "#1"
+				},
+				"west": {
+					"uv": [
+						2,
+						10,
+						14,
+						16
+					],
+					"texture": "#1"
+				},
+				"up": {
+					"uv": [
+						1,
+						2,
+						15,
+						14
+					],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [
+						1,
+						2,
+						15,
+						14
+					],
+					"texture": "#0"
+				}
+			}
+		},
+		{
+			"name": "socket",
+			"from": [
+				3,
+				6,
+				4
+			],
+			"to": [
+				11,
+				7,
+				10
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						5,
+						9,
+						13,
+						10
+					],
+					"texture": "#3"
+				},
+				"east": {
+					"uv": [
+						6,
+						9,
+						12,
+						10
+					],
+					"texture": "#3"
+				},
+				"south": {
+					"uv": [
+						3,
+						9,
+						11,
+						10
+					],
+					"texture": "#3"
+				},
+				"west": {
+					"uv": [
+						4,
+						9,
+						10,
+						10
+					],
+					"texture": "#3"
+				},
+				"up": {
+					"uv": [
+						3,
+						4,
+						11,
+						10
+					],
+					"texture": "#3"
+				}
+			}
+		},
+		{
+			"name": "lever",
+			"from": [
+				2,
+				6,
+				4
+			],
+			"to": [
+				2.5,
+				6.5,
+				9.5
+			],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [
+					2.25,
+					6.25,
+					9.5
+				]
+			},
+			"faces": {
+				"north": {
+					"uv": [
+						1.25,
+						0.25,
+						1.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"east": {
+					"uv": [
+						1.25,
+						0.25,
+						1.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"south": {
+					"uv": [
+						1.25,
+						0.25,
+						1.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"west": {
+					"uv": [
+						1.25,
+						0.25,
+						1.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"up": {
+					"uv": [
+						1.25,
+						0.25,
+						1.75,
+						0.75
+					],
+					"texture": "#4"
+				}
+			}
+		},
+		{
+			"name": "lever_knob",
+			"from": [
+				1.75,
+				6,
+				3
+			],
+			"to": [
+				2.75,
+				7,
+				4
+			],
+			"rotation": {
+				"angle": 0,
+				"axis": "y",
+				"origin": [
+					2.25,
+					6.25,
+					9.5
+				]
+			},
+			"faces": {
+				"north": {
+					"uv": [
+						0.25,
+						0.25,
+						0.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"east": {
+					"uv": [
+						0.25,
+						0.25,
+						0.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"south": {
+					"uv": [
+						0.25,
+						0.25,
+						0.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"west": {
+					"uv": [
+						0.25,
+						0.25,
+						0.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"up": {
+					"uv": [
+						0.25,
+						0.25,
+						0.75,
+						0.75
+					],
+					"texture": "#4"
+				}
+			}
+		},
+		{
+			"name": "status_led",
+			"from": [
+				3.125,
+				3.125,
+				1.85
+			],
+			"to": [
+				3.875,
+				3.875,
+				2
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						2.25,
+						0.25,
+						2.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"east": {
+					"uv": [
+						2.25,
+						0.25,
+						2.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"west": {
+					"uv": [
+						2.25,
+						0.25,
+						2.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"up": {
+					"uv": [
+						2.25,
+						0.25,
+						2.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"down": {
+					"uv": [
+						2.25,
+						0.25,
+						2.75,
+						0.75
+					],
+					"texture": "#4"
+				}
+			}
+		},
+		{
+			"name": "back_connector",
+			"from": [
+				4.5,
+				3,
+				14
+			],
+			"to": [
+				11.5,
+				5,
+				15
+			],
+			"faces": {
+				"east": {
+					"uv": [
+						3.25,
+						0.25,
+						3.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"south": {
+					"uv": [
+						3.25,
+						0.25,
+						3.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"west": {
+					"uv": [
+						3.25,
+						0.25,
+						3.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"up": {
+					"uv": [
+						3.25,
+						0.25,
+						3.75,
+						0.75
+					],
+					"texture": "#4"
+				},
+				"down": {
+					"uv": [
+						3.25,
+						0.25,
+						3.75,
+						0.75
+					],
+					"texture": "#4"
+				}
+			}
+		},
+		{
+			"name": "cable_out",
+			"from": [
+				5,
+				3.75,
+				15
+			],
+			"to": [
+				11,
+				4,
+				15.75
+			],
+			"faces": {
+				"east": {
+					"uv": [
+						10,
+						12,
+						11,
+						12.25
+					],
+					"texture": "#5"
+				},
+				"west": {
+					"uv": [
+						5,
+						12,
+						6,
+						12.25
+					],
+					"texture": "#5"
+				},
+				"up": {
+					"uv": [
+						5,
+						15,
+						11,
+						15.75
+					],
+					"texture": "#5"
+				},
+				"down": {
+					"uv": [
+						5,
+						0.25,
+						11,
+						1
+					],
+					"texture": "#5"
+				}
+			}
+		},
+		{
+			"name": "cable_drop",
+			"from": [
+				5,
+				0,
+				15.75
+			],
+			"to": [
+				11,
+				4,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						11,
+						12,
+						5,
+						16
+					],
+					"texture": "#5"
+				},
+				"east": {
+					"uv": [
+						10,
+						12,
+						11,
+						16
+					],
+					"texture": "#5"
+				},
+				"south": {
+					"uv": [
+						5,
+						12,
+						11,
+						16
+					],
+					"texture": "#5"
+				},
+				"west": {
+					"uv": [
+						5,
+						12,
+						6,
+						16
+					],
+					"texture": "#5"
+				},
+				"up": {
+					"uv": [
+						5,
+						15,
+						11,
+						15.25
+					],
+					"texture": "#5"
+				}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [
+				30,
+				225,
+				0
+			],
+			"translation": [
+				0,
+				2.5,
+				0
+			],
+			"scale": [
+				0.75,
+				0.75,
+				0.75
+			]
+		}
+	}
+}

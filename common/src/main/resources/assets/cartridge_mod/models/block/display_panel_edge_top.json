@@ -1,0 +1,80 @@
+{
+	"parent": "minecraft:block/block",
+	"textures": {
+		"0": "cartridge_mod:block/flatscreen_tv_casing",
+		"1": "cartridge_mod:block/display_panel_glass",
+		"2": "cartridge_mod:block/display_panel_back",
+		"particle": "cartridge_mod:block/flatscreen_tv_casing"
+	},
+	"elements": [
+		{
+			"name": "edge_top",
+			"from": [
+				0,
+				15.5,
+				14.25
+			],
+			"to": [
+				16,
+				16,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						0.5
+					],
+					"texture": "#0"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						1.75,
+						0.5
+					],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						16,
+						0.5
+					],
+					"texture": "#0"
+				},
+				"west": {
+					"uv": [
+						14.25,
+						0,
+						16,
+						0.5
+					],
+					"texture": "#0"
+				},
+				"up": {
+					"uv": [
+						0,
+						14.25,
+						16,
+						16
+					],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						1.75
+					],
+					"texture": "#0"
+				}
+			}
+		}
+	]
+}

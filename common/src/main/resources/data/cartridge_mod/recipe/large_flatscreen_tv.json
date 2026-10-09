@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    {
+      "item": "cartridge_mod:flatscreen_tv"
+    },
+    {
+      "item": "cartridge_mod:flatscreen_tv"
+    },
+    {
+      "item": "cartridge_mod:flatscreen_tv"
+    },
+    {
+      "item": "cartridge_mod:flatscreen_tv"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "cartridge_mod:large_flatscreen_tv"
+  }
+}

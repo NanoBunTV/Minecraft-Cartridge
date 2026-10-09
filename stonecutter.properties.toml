@@ -1,0 +1,171 @@
+# Mod metadata and dependency versions (Stonecutter structured properties).
+# Top-level keys apply everywhere; ["<mc version>"] tables apply only to that version's projects.
+# Branch names (common, fabric, neoforge, forge) are lookup tags, so never use one as a key segment (deps.neoforge breaks).
+
+mod.id = "cartridge_mod"                 # D2
+mod.name = "Cartridge"                   # D2
+mod.group = "com.nanobuntv.cartridge"    # D2
+mod.version = "1.0.0"
+mod.authors = "NanoBunTV"
+mod.license = "GPL-3.0-only"             # D219 (was All Rights Reserved, D4)
+mod.slug = "cartridge-mod"               # Modrinth and CurseForge (D207)
+mod.sources = "https://github.com/NanoBunTV/Minecraft-Cartridge"  # public; cartridge-host downloads from here (D218)
+mod.description = "Real retro consoles: burn your own ROMs onto cartridges, play them on in-world TVs with friends over automatic netplay."
+
+# D195: the Cartridge Arcade add-on, built in this repository as its own jars. It needs Cartridge of the same version.
+arcade.mod.id = "cartridge_arcade"
+arcade.mod.name = "Cartridge: Arcade"         # the mod list name, the user's pick
+arcade.mod.group = "com.nanobuntv.cartridge.arcade"
+arcade.mod.version = "1.0.0"
+arcade.mod.authors = "NanoBunTV"
+arcade.mod.license = "GPL-3.0-only"          # D219
+arcade.mod.slug = "cartridge-arcade"          # its own project page (D208)
+arcade.mod.sources = "https://github.com/NanoBunTV/Minecraft-Cartridge"
+arcade.mod.description = "Arcade cabinets add-on for Cartridge mod: your own MAME romsets on Arcade Boards, played on upright cabinets with automatic netplay."
+
+deps.mixin = "0.8.7"
+deps.mixinextras = "0.5.5"
+deps.fabric_loader = "0.19.5"
+
+# Per version (D210): YetAnotherConfigLib (D122) is required on every loader; deps.yacl_* are full Maven coordinates
+# because its artifacts were named differently before 1.20.1. yacl_common is the Mojang-named build common compiles
+# against. Mod Menu is optional on Fabric. mixins.client lists the client mixins that exist on that version.
+
+["1.21.1"]
+java = 21
+mc.pack_meta = '"pack_format": 34'      # pack.mcmeta's format field(s) for this MC version; "" ships no pack.mcmeta
+mixins.client = "GuiMixin ItemInHandLayerMixin ItemRendererMixin KeyboardHandlerMixin LocalPlayerMixin MouseHandlerMixin PlayerRendererMixin"
+mc.compat_fabric = ">=1.21.1 <1.21.2"
+mc.compat_neoforge = "[1.21.1]"
+deps.neoform = "1.21.1-20240808.144430"
+deps.parchment_mc = "1.21.1"
+deps.parchment = "2024.11.17"
+deps.fabric_api = "0.116.17+1.21.1"
+deps.neoforge_version = "21.1.255"
+deps.neoforge_range = "[21.1.0,)"
+deps.yacl_common = "dev.isxander:yet-another-config-lib:3.8.1+1.21.1-neoforge"
+deps.yacl_fabric = "dev.isxander:yet-another-config-lib:3.8.1+1.21.1-fabric"
+deps.yacl_neoforge = "dev.isxander:yet-another-config-lib:3.8.1+1.21.1-neoforge"
+deps.yacl_id = "yet_another_config_lib_v3"
+deps.yacl_range = "3.8.1"
+deps.modmenu = "11.0.5"                  # optional on Fabric: the Config button (D122)
+
+["1.21.11"]
+java = 21
+mc.pack_meta = ""                        # none: 1.21.9+ formats split resources and data; the loaders supply it
+mixins.client = "GuiMixin ItemInHandLayerMixin KeyboardHandlerMixin LocalPlayerMixin MouseHandlerMixin PlayerRendererMixin SelectItemModelPropertiesAccessor SpecialModelRenderersAccessor ClientInputAccessor"
+mc.compat_fabric = ">=1.21.11 <1.21.12"
+mc.compat_neoforge = "[1.21.11]"
+deps.neoform = "1.21.11-20251209.172050"
+deps.parchment_mc = "1.21.11"
+deps.parchment = "2025.12.20"
+deps.fabric_api = "0.141.6+1.21.11"
+deps.neoforge_version = "21.11.45"
+deps.neoforge_range = "[21.11.0,)"
+deps.yacl_common = "dev.isxander:yet-another-config-lib:3.8.1+1.21.11-neoforge"
+deps.yacl_fabric = "dev.isxander:yet-another-config-lib:3.8.1+1.21.11-fabric"
+deps.yacl_neoforge = "dev.isxander:yet-another-config-lib:3.8.1+1.21.11-neoforge"
+deps.yacl_id = "yet_another_config_lib_v3"
+deps.yacl_range = "3.8.1"
+deps.modmenu = "17.0.1"
+
+# 26.1+: Minecraft ships unobfuscated (no NeoForm mapping step, plain fabric-loom) and needs Java 25.
+# Parchment has no releases for 26.x, so deps.parchment is empty and the nodes build without it.
+["26.1.2"]
+java = 25
+mc.pack_meta = ""
+mixins.client = "GuiMixin ItemInHandLayerMixin KeyboardHandlerMixin LocalPlayerMixin MouseHandlerMixin PlayerRendererMixin SelectItemModelPropertiesAccessor SpecialModelRenderersAccessor ClientInputAccessor"
+mc.compat_fabric = ">=26.1.2 <26.1.3"
+mc.compat_neoforge = "[26.1.2]"
+deps.neoform = "26.1.2-1"
+deps.parchment_mc = ""
+deps.parchment = ""
+deps.fabric_api = "0.155.3+26.1.2"
+deps.neoforge_version = "26.1.2.114"
+deps.neoforge_range = "[26.1.2.0,)"
+deps.yacl_common = "dev.isxander:yet-another-config-lib:3.9.7+26.1-neoforge"
+deps.yacl_fabric = "dev.isxander:yet-another-config-lib:3.9.7+26.1-fabric"
+deps.yacl_neoforge = "dev.isxander:yet-another-config-lib:3.9.7+26.1-neoforge"
+deps.yacl_id = "yet_another_config_lib_v3"
+deps.yacl_range = "3.9.7"
+deps.modmenu = "18.0.2"
+
+["26.2"]
+java = 25
+mc.pack_meta = ""
+mixins.client = "GuiMixin ItemInHandLayerMixin KeyboardHandlerMixin LocalPlayerMixin MouseHandlerMixin PlayerRendererMixin SelectItemModelPropertiesAccessor SpecialModelRenderersAccessor ClientInputAccessor"
+mc.compat_fabric = ">=26.2 <26.2.1"
+mc.compat_neoforge = "[26.2]"
+deps.neoform = "26.2-2"
+deps.parchment_mc = ""
+deps.parchment = ""
+deps.fabric_api = "0.161.0+26.2"
+deps.neoforge_version = "26.2.0.88"
+deps.neoforge_range = "[26.2.0.0,)"
+deps.yacl_common = "dev.isxander:yet-another-config-lib:3.9.7+26.2-neoforge"
+deps.yacl_fabric = "dev.isxander:yet-another-config-lib:3.9.7+26.2-fabric"
+deps.yacl_neoforge = "dev.isxander:yet-another-config-lib:3.9.7+26.2-neoforge"
+deps.yacl_id = "yet_another_config_lib_v3"
+deps.yacl_range = "3.9.7"
+deps.modmenu = "20.0.3"
+
+["26.3"]
+java = 25
+mc.pack_meta = ""
+mixins.client = "GuiMixin ItemInHandLayerMixin KeyboardHandlerMixin LocalPlayerMixin MouseHandlerMixin PlayerRendererMixin SelectItemModelPropertiesAccessor SpecialModelRenderersAccessor ClientInputAccessor"
+mc.compat_fabric = ">=26.3 <26.3.1"
+mc.compat_neoforge = "[26.3]"
+deps.neoform = "26.3-1"
+deps.parchment_mc = ""
+deps.parchment = ""
+deps.fabric_api = "0.161.0+26.3"
+deps.neoforge_version = "26.3.0.51-beta"   # NeoForge 26.3 is still in beta (as Have A Smoke's D107)
+deps.neoforge_range = "[26.3.0.0,)"
+deps.yacl_common = "dev.isxander:yet-another-config-lib:3.9.7+26.3-neoforge"
+deps.yacl_fabric = "dev.isxander:yet-another-config-lib:3.9.7+26.3-fabric"
+deps.yacl_neoforge = "dev.isxander:yet-another-config-lib:3.9.7+26.3-neoforge"
+deps.yacl_id = "yet_another_config_lib_v3"
+deps.yacl_range = "3.9.7"
+deps.modmenu = "21.0.0"
+
+# Backports: Java 17, Forge instead of NeoForge (the 1.20.1 Forge jar also runs on NeoForge 47.1). Common code
+# compiles against MCPConfig's vanilla.
+["1.20.1"]
+java = 17
+mc.pack_meta = '"pack_format": 15'
+mixins.client = "GuiMixin ItemInHandLayerMixin ItemRendererMixin KeyboardHandlerMixin LocalPlayerMixin MouseHandlerMixin PlayerRendererMixin"
+mc.compat_fabric = ">=1.20.1 <1.20.2"
+mc.compat_forge = "[1.20.1]"
+deps.mcp = "1.20.1"
+deps.parchment_mc = "1.20.1"
+deps.parchment = "2023.09.03"
+deps.fabric_api = "0.92.12+1.20.1"
+deps.forge_version = "1.20.1-47.4.26"
+deps.forge_range = "[47,)"
+deps.forge_loader_range = "[47,)"
+deps.yacl_common = "dev.isxander:yet-another-config-lib:3.6.6+1.20.1-forge"
+deps.yacl_fabric = "dev.isxander:yet-another-config-lib:3.6.6+1.20.1-fabric"
+deps.yacl_forge = "dev.isxander:yet-another-config-lib:3.6.6+1.20.1-forge"
+deps.yacl_id = "yet_another_config_lib_v3"
+deps.yacl_range = "3.6.6"
+deps.modmenu = "7.2.2"
+
+["1.19.4"]
+java = 17
+mc.pack_meta = '"pack_format": 13, "forge:data_pack_format": 12'
+mixins.client = "GuiMixin ItemInHandLayerMixin ItemRendererMixin KeyboardHandlerMixin LocalPlayerMixin MouseHandlerMixin PlayerRendererMixin"
+mc.compat_fabric = ">=1.19.4 <1.20"
+mc.compat_forge = "[1.19.4]"
+deps.mcp = "1.19.4"
+deps.parchment_mc = "1.19.4"
+deps.parchment = "2023.06.26"
+deps.fabric_api = "0.87.2+1.19.4"
+deps.forge_version = "1.19.4-45.4.5"
+deps.forge_range = "[45,)"
+deps.forge_loader_range = "[45,)"
+deps.yacl_common = "dev.isxander.yacl:yet-another-config-lib-forge:3.1.1+1.19.4"
+deps.yacl_fabric = "dev.isxander.yacl:yet-another-config-lib-fabric:3.1.1+1.19.4"
+deps.yacl_forge = "dev.isxander.yacl:yet-another-config-lib-forge:3.1.1+1.19.4"
+deps.yacl_id = "yet_another_config_lib_v3"
+deps.yacl_range = "3.1.1"
+deps.modmenu = "6.3.1"

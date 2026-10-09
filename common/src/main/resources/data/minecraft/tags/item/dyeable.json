@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "cartridge_mod:pocketron_color",
+    "cartridge_mod:pocketron_advance",
+    "cartridge_mod:pocketron_advance_sp"
+  ]
+}

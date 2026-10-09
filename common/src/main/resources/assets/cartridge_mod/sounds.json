@@ -1,0 +1,80 @@
+{
+  "console.cart_insert": {
+    "subtitle": "subtitles.cartridge_mod.console.cart_insert",
+    "sounds": [
+      "cartridge_mod:cart_insert_1",
+      "cartridge_mod:cart_insert_2"
+    ]
+  },
+  "console.cart_eject": {
+    "subtitle": "subtitles.cartridge_mod.console.cart_eject",
+    "sounds": [
+      "cartridge_mod:cart_eject_1",
+      "cartridge_mod:cart_eject_2"
+    ]
+  },
+  "console.power_on": {
+    "subtitle": "subtitles.cartridge_mod.console.power_on",
+    "sounds": [
+      "cartridge_mod:power_on"
+    ]
+  },
+  "console.power_off": {
+    "subtitle": "subtitles.cartridge_mod.console.power_off",
+    "sounds": [
+      "cartridge_mod:power_off"
+    ]
+  },
+  "console.reset": {
+    "subtitle": "subtitles.cartridge_mod.console.reset",
+    "sounds": [
+      "cartridge_mod:reset"
+    ]
+  },
+  "console.plug": {
+    "subtitle": "subtitles.cartridge_mod.console.plug",
+    "sounds": [
+      "cartridge_mod:plug_1",
+      "cartridge_mod:plug_2"
+    ]
+  },
+  "console.unplug": {
+    "subtitle": "subtitles.cartridge_mod.console.unplug",
+    "sounds": [
+      "cartridge_mod:unplug_1",
+      "cartridge_mod:unplug_2"
+    ]
+  },
+  "console.pad_take": {
+    "subtitle": "subtitles.cartridge_mod.console.pad_take",
+    "sounds": [
+      "cartridge_mod:pad_take_1",
+      "cartridge_mod:pad_take_2"
+    ]
+  },
+  "console.pad_put_down": {
+    "subtitle": "subtitles.cartridge_mod.console.pad_put_down",
+    "sounds": [
+      "cartridge_mod:pad_put_down_1",
+      "cartridge_mod:pad_put_down_2"
+    ]
+  },
+  "tv.power_on": {
+    "subtitle": "subtitles.cartridge_mod.tv.power_on",
+    "sounds": [
+      "cartridge_mod:tv_on"
+    ]
+  },
+  "tv.power_off": {
+    "subtitle": "subtitles.cartridge_mod.tv.power_off",
+    "sounds": [
+      "cartridge_mod:tv_off"
+    ]
+  },
+  "tv.cable_link": {
+    "subtitle": "subtitles.cartridge_mod.tv.cable_link",
+    "sounds": [
+      "cartridge_mod:cable_link"
+    ]
+  }
+}

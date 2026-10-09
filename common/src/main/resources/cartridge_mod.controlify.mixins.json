@@ -1,0 +1,14 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.nanobuntv.cartridge.mixin.compat",
+  "plugin": "com.nanobuntv.cartridge.mixin.compat.ControlifyMixinPlugin",
+  "compatibilityLevel": "JAVA_${mixin_java}",
+  "mixins": [],
+  "client": [
+    "InGameInputHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

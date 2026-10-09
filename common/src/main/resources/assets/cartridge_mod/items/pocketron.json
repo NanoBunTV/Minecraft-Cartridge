@@ -1,0 +1,31 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:model",
+          "model": "cartridge_mod:item/pocketron_icon"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:composite",
+      "models": [
+        {
+          "type": "minecraft:model",
+          "model": "cartridge_mod:item/pocketron"
+        },
+        {
+          "type": "minecraft:special",
+          "base": "cartridge_mod:item/pocketron",
+          "model": {
+            "type": "cartridge_mod:handheld_screen"
+          }
+        }
+      ]
+    }
+  }
+}

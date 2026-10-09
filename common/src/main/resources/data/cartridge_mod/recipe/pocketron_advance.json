@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "L": {
+      "item": "minecraft:glass_pane"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "cartridge_mod:pocketron_color"
+    }
+  },
+  "pattern": [
+    "GLG",
+    "RCR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "cartridge_mod:pocketron_advance"
+  }
+}

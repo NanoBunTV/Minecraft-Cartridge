@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cartridge_arcade:item/arcade_board",
+    "layer1": "cartridge_arcade:item/arcade_board_label"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cartridge_mod:block/console_64"
+    },
+    "facing=east": {
+      "model": "cartridge_mod:block/console_64",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cartridge_mod:block/console_64",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cartridge_mod:block/console_64",
+      "y": 270
+    }
+  }
+}
