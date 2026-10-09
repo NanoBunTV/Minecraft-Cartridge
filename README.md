@@ -1,5 +1,8 @@
 # Cartridge
 
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/cartridge-mod?logo=Modrinth&label=Modrinth%20Downloads&color=00af5c)](https://modrinth.com/mod/cartridge-mod) [![CurseForge Downloads](https://img.shields.io/curseforge/dt/cartridge-mod?logo=CurseForge&label=CurseForge%20Downloads&color=f16436)
+](https://www.curseforge.com/minecraft/mc-mods/cartridge-mod)
+
 Real retro consoles for Minecraft: burn your own ROMs onto cartridges, play them on in-world TVs with friends over
 automatic netplay. This repository also holds **Cartridge: Arcade**, the add-on with MAME arcade cabinets.
 
