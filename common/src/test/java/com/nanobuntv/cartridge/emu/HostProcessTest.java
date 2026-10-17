@@ -23,8 +23,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
 /**
- * Drives the real cartridge-host from Java, the way the mod will. Uses the host from natives/ and the core
- * and nestest ROM cached by sidecar/tools/harness.py (D59); skipped when those aren't present.
+ * Drives the real cartridge-host from Java, the way the mod will. Uses the host built in sidecar/zig-out/natives/ and
+ * the core and nestest ROM cached by sidecar/tools/harness.py (D59); skipped when those aren't present.
  */
 class HostProcessTest {
     private static final Path ROOT = Path.of(System.getProperty("cartridge.root", "../../.."));
@@ -35,7 +35,7 @@ class HostProcessTest {
 
     private HostProcess startHost() throws Exception {
         HostPlatform platform = HostPlatform.current().orElseThrow();
-        Path host = ROOT.resolve("natives").resolve(platform.id).resolve(platform.hostFileName);
+        Path host = ROOT.resolve("sidecar/zig-out/natives").resolve(platform.id).resolve(platform.hostFileName);
         assumeTrue(Files.exists(host), "cartridge-host not built");
         return HostProcess.start(host, temp.resolve("test-" + System.nanoTime() + SharedMemory.FILE_SUFFIX),
                 temp.resolve("system"));

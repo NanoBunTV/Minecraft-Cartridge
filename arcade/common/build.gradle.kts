@@ -63,9 +63,10 @@ tasks.test {
     systemProperty("cartridge.root", rootProject.projectDir.absolutePath)
 }
 
-// MAME for this platform and cartridge-host (natives/, D218), laid out as in a dev run, so Natives finds them.
+// MAME for this platform and cartridge-host (built from sidecar/, D220), laid out as in a dev run, so Natives finds them.
 tasks.processTestResources {
-    from(rootProject.file("natives")) { into("natives") }
+    dependsOn(":buildSidecar")
+    from(rootProject.file("sidecar/zig-out/natives")) { into("natives") }
     val windows = System.getProperty("os.name").startsWith("Windows")
     val zip = rootProject.file("arcade/cores/mame/mame_libretro.${if (windows) "dll" else "so"}.zip")
     from(zipTree(zip)) { into("cores/${if (windows) "windows" else "linux"}-x86_64") }

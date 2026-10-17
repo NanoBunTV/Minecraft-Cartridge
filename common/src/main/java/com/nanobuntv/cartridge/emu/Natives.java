@@ -22,9 +22,9 @@ import org.slf4j.LoggerFactory;
  * Puts the native files the mod needs into {@code <gameDir>/cartridge_mod/}:
  * <ul>
  *   <li>cartridge-host, in {@code natives/<os>-<arch>/} (D218). The mod jar carries no executables (CurseForge refuses
- *       them), only {@code natives/host.properties}: each platform's SHA-256 and the addresses of the public
- *       repository's {@code natives/} folder. The host is downloaded from there once and must match that hash, so
- *       nothing but the file this version was built with ever runs. A player without internet access can put the
+ *       them), only {@code natives/host.properties}: each platform's SHA-256 and the address of the file on this
+ *       version's GitHub Release, where CI attaches the host it built with the jars (D220). The host is downloaded
+ *       from there once and must match that hash, so nothing but the file this version was built with ever runs. A player without internet access can put the
  *       file in place by hand. A dev run or a test has the binaries on its classpath and extracts them instead.</li>
  *   <li>the emulator cores (D114, D137), from {@code cores/<os>-<arch>/} to {@code cores/<os>-<arch>/}: each pinned
  *       at its {@link CoreSpec#version()}, the same upstream commit on every platform. Their license texts and source
@@ -78,7 +78,7 @@ public final class Natives {
 
     /**
      * Downloads the file with the SHA-256 {@code sha256} to {@code target} from the first of {@code urls} that has it
-     * (D218): the release's tag can be missing, or main can hold a newer build.
+     * (D218): a list, so a mirror can be added later.
      */
     static void download(List<URI> urls, String sha256, Path target) throws IOException {
         Path dir = target.getParent();

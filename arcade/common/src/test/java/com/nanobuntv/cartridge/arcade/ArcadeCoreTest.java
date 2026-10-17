@@ -114,7 +114,7 @@ class ArcadeCoreTest {
         String set = game.getFileName().toString().replace(".zip", "");
         byte[] rom = Files.readAllBytes(game);
         HostPlatform platform = HostPlatform.current().orElseThrow();
-        Path hostExe = ROOT.resolve("natives").resolve(platform.id).resolve(platform.hostFileName);
+        Path hostExe = ROOT.resolve("sidecar/zig-out/natives").resolve(platform.id).resolve(platform.hostFileName);
         Path core = Natives.extractCore(temp, platform, ArcadeCore.MAME);
 
         try (HostProcess a = start(hostExe, core); HostProcess b = start(hostExe, core)) {

@@ -24,21 +24,21 @@ tasks.processResources {
     dependsOn(commonResources)
     from(commonResources)
     if (!isArcade) {
-        // cartridge-host (D218): dev runs get the binaries from natives/; the jar leaves them out (below) and carries
-        // natives/host.properties instead, the SHA-256 of each and where emu/Natives downloads them from.
-        val natives = rootProject.file("natives")
+        // cartridge-host (D218, D220): built from sidecar/ by :buildSidecar. Dev runs get the binaries on the classpath;
+        // the jar leaves them out (below) and carries natives/host.properties instead, the SHA-256 of each and where
+        // emu/Natives downloads them from: the assets CI attaches to this version's GitHub Release.
+        dependsOn(":buildSidecar")
+        val natives = rootProject.file("sidecar/zig-out/natives")
         val version = modProp("version")
         val sources = modProp("sources")
         inputs.dir(natives)
         inputs.property("hostSources", "$sources@$version")
         from(natives) { into("natives") }
         doLast {
-            val raw = sources.replace("https://github.com/", "https://raw.githubusercontent.com/")
             val lines = mutableListOf(
-                "# cartridge-host for each platform, downloaded and checked by emu/Natives (D218).",
-                // The release's tag first, then main: the file a version was built with stays at its tag.
-                "url.0=$raw/v$version/natives/{platform}/{file}",
-                "url.1=$raw/main/natives/{platform}/{file}",
+                "# cartridge-host for each platform, downloaded and checked by emu/Natives (D218, D220).",
+                // The release's assets are named <platform>-<file> (.github/workflows/build.yml).
+                "url.0=$sources/releases/download/v$version/{platform}-{file}",
             )
             natives.listFiles()!!.sorted().forEach { dir ->
                 val host = dir.listFiles()!!.single { it.name.startsWith("cartridge-host") }

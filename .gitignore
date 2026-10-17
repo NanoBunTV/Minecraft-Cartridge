@@ -14,5 +14,5 @@ zig-cache/
 *.log
 sidecar/.cache/
 *.lnk
-_Release/
+dist/
 Docs/

@@ -1,0 +1,138 @@
+# Builds both mods from source on every push (D220): cartridge-host with Zig, every loader on every Minecraft version.
+# The run's summary lists the SHA-256 of every native and jar, the files are signed with build provenance, and a
+# pushed v<version> tag publishes them as that version's GitHub Release. The release jars come only from here.
+name: Build
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    permissions:
+      contents: write      # gh release create
+      id-token: write      # build provenance
+      attestations: write
+    steps:
+      # 28 jars, the Arcade ones about 224 MB each, plus each Minecraft version's setup.
+      - name: Free disk space
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc && df -h /
+
+      - uses: actions/checkout@v4
+
+      # The MAME zips are Git LFS files (D195). Cache them so each run doesn't use LFS bandwidth.
+      - name: List LFS files
+        run: git lfs ls-files --long | cut -d ' ' -f1 | sort > .lfs-ids
+      - uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-ids') }}
+      - name: Fetch LFS files
+        run: git lfs pull
+
+      - name: Check the tag matches the version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          version=$(sed -n 's/^mod\.version = "\(.*\)"/\1/p' stonecutter.properties.toml)
+          arcade=$(sed -n 's/^arcade\.mod\.version = "\(.*\)"/\1/p' stonecutter.properties.toml)
+          # The jars download cartridge-host from the release named after mod.version (D218).
+          if [ "v$version" != "$GITHUB_REF_NAME" ] || [ "v$arcade" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME doesn't match mod.version $version / arcade.mod.version $arcade"
+            exit 1
+          fi
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: |
+            17
+            21
+            25
+
+      - uses: mlugg/setup-zig@v2
+        with:
+          version: 0.17.0
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build
+        run: |
+          chmod +x gradlew
+          ./gradlew build --stacktrace \
+            -Porg.gradle.java.installations.fromEnv=JAVA_HOME_17_X64,JAVA_HOME_21_X64,JAVA_HOME_25_X64
+
+      - name: Collect files
+        run: |
+          mkdir dist
+          # The loader projects' jars only: common's (cartridge_*-common-*) is a build step, not a mod. Moved, not
+          # copied: disk space.
+          for loader in fabric forge neoforge arcade/fabric arcade/forge arcade/neoforge; do
+            find "$loader/versions" -path '*/build/libs/*.jar' ! -name '*-sources.jar' -exec mv -t dist {} +
+          done
+          # 14 per mod: Fabric on 7 versions, Forge on 2 (1.19.4, 1.20.1), NeoForge on 5 (D210).
+          count=$(ls dist/*.jar | wc -l)
+          if [ "$count" -ne 28 ]; then echo "::error::Expected 28 jars, found $count"; ls dist; exit 1; fi
+          # cartridge-host, named <platform>-<file>: the address in each jar's natives/host.properties.
+          for dir in sidecar/zig-out/natives/*/; do
+            for file in "$dir"*; do cp "$file" "dist/$(basename "$dir")-$(basename "$file")"; done
+          done
+          ls -l dist
+
+      - name: Write hashes to the summary
+        run: |
+          {
+            echo "## SHA-256"
+            echo
+            echo "Commit \`$GITHUB_SHA\`."
+            echo
+            echo "### cartridge-host, built from \`sidecar/\` in this run"
+            echo '```'
+            (cd sidecar/zig-out/natives && sha256sum */*)
+            echo '```'
+            echo "### Bundled libretro cores (third-party, unchanged; origin and exact commit in each SOURCE.md)"
+            echo '```'
+            for zip in cores/*/*.zip arcade/cores/mame/*.zip; do
+              echo "$(unzip -p "$zip" | sha256sum | cut -d ' ' -f1)  $zip"
+            done
+            echo '```'
+            echo "### Jars"
+            echo '```'
+            (cd dist && sha256sum *.jar)
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cartridge-${{ github.sha }}
+          path: dist/
+          compression-level: 0   # jars are already compressed
+          retention-days: 30
+
+      - name: Sign build provenance
+        if: github.event_name != 'pull_request'
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: dist/*
+
+      - name: Publish the GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          gh release create "$GITHUB_REF_NAME" dist/* --title "Cartridge ${GITHUB_REF_NAME#v}" --notes \
+            "Built from \`$GITHUB_SHA\` by [this run]($run), which lists every file's SHA-256. Verify a jar with
+          \`gh attestation verify <jar> --repo $GITHUB_REPOSITORY\`.
+
+          Download the mods from Modrinth: [Cartridge](https://modrinth.com/mod/cartridge-mod) and
+          [Cartridge: Arcade](https://modrinth.com/mod/cartridge-arcade). The \`cartridge-host\` files are the
+          emulator host the mod downloads at runtime; you don't need to download them yourself."

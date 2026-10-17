@@ -64,7 +64,7 @@ afterEvaluate {
     }
 }
 
-// Unit tests for the plain-Java parts (emu/). HostProcessTest drives the real sidecar, the committed natives/ (D218).
+// Unit tests for the plain-Java parts (emu/). HostProcessTest drives the real sidecar, built from sidecar/ (D220).
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
@@ -79,8 +79,9 @@ tasks.test {
 }
 
 tasks.processTestResources {
-    // natives/<os>-<arch>/, laid out as in a dev run's resources, for NativesTest.
-    from(rootProject.file("natives")) { into("natives") }
+    // cartridge-host's natives/<os>-<arch>/, laid out as in a dev run's resources, for NativesTest.
+    dependsOn(":buildSidecar")
+    from(rootProject.file("sidecar/zig-out/natives")) { into("natives") }
     // The bundled cores (D114, D137), laid out as in the loader jars.
     for (core in listOf("fceumm", "snes9x", "genesis_plus_gx", "sameboy", "mgba", "mupen64plus_next")) {
         from(zipTree(rootProject.file("cores/$core/${core}_libretro.dll.zip"))) { into("cores/windows-x86_64") }
