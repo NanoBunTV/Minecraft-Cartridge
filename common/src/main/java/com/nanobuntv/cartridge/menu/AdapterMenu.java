@@ -6,7 +6,6 @@ import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -32,17 +31,7 @@ public class AdapterMenu extends HeldItemMenu {
     private AdapterMenu(int containerId, Inventory inventory, Container container, int adapterSlot) {
         super(CartridgeMenus.POCKETRON_ADAPTER.get(), containerId, adapterSlot, 1);
         this.container = container;
-        addSlot(new Slot(container, 0, SLOT_X, SLOT_Y) {
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                return PocketronAdapterItem.fits(stack);
-            }
-
-            @Override
-            public int getMaxStackSize() {
-                return 1;
-            }
-        });
+        addSlot(RuleSlot.single(container, 0, SLOT_X, SLOT_Y, PocketronAdapterItem::fits));
         addInventory(inventory, INVENTORY_Y);
     }
 

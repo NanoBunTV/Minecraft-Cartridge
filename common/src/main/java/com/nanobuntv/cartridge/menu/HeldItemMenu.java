@@ -35,17 +35,7 @@ public abstract class HeldItemMenu extends AbstractContainerMenu {
     }
 
     private Slot lockable(Inventory inventory, int index, int x, int y) {
-        return new Slot(inventory, index, x, y) {
-            @Override
-            public boolean mayPickup(Player player) {
-                return index != heldSlot;
-            }
-
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                return index != heldSlot;
-            }
-        };
+        return new RuleSlot(inventory, index, x, y, stack -> true, 0).unlockedWhen(() -> index != heldSlot);
     }
 
     /** Number keys and the off-hand key swap slots without picking up: not with the held item. */

@@ -17,7 +17,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.DataSlot;
 import net.minecraft.world.inventory.SimpleContainerData;
-import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -76,46 +75,13 @@ public class ConsoleMenu extends HeldItemMenu {
         this.container = container;
         this.data = data;
         container.startOpen(inventory.player);
-        addSlot(new Slot(container, ConsoleBlockEntity.CART_SLOT, SLOT_X, SLOT_Y) {
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                // The console's own check (a game for this console, D143); on the client, any cartridge.
-                return ConsoleBlockEntity.isCartridge(stack) && container.canPlaceItem(ConsoleBlockEntity.CART_SLOT, stack);
-            }
-
-            @Override
-            public int getMaxStackSize() {
-                return 1;
-            }
-        });
-        addSlot(new Slot(container, ConsoleBlockEntity.CARD_SLOT, CARD_X, CARD_Y) {
-            @Override
-            public boolean mayPlace(ItemStack stack) {
-                return MemoryCardItem.isCard(stack);
-            }
-
-            @Override
-            public int getMaxStackSize() {
-                return 1;
-            }
-        });
+        // The console's own check (a game for this console, D143); on the client, any cartridge.
+        addSlot(RuleSlot.single(container, ConsoleBlockEntity.CART_SLOT, SLOT_X, SLOT_Y, stack ->
+                ConsoleBlockEntity.isCartridge(stack) && container.canPlaceItem(ConsoleBlockEntity.CART_SLOT, stack)));
+        addSlot(RuleSlot.single(container, ConsoleBlockEntity.CARD_SLOT, CARD_X, CARD_Y, MemoryCardItem::isCard));
         if (container.getContainerSize() == 3) {
-            addSlot(new Slot(container, 2, LINK_X, LINK_Y) {
-                @Override
-                public boolean mayPlace(ItemStack stack) {
-                    return linkable() && stack.is(CartridgeItems.LINK_CABLE.get());
-                }
-
-                @Override
-                public boolean isActive() {
-                    return linkable();
-                }
-
-                @Override
-                public int getMaxStackSize() {
-                    return 1;
-                }
-            });
+            addSlot(RuleSlot.single(container, 2, LINK_X, LINK_Y,
+                    stack -> linkable() && stack.is(CartridgeItems.LINK_CABLE.get())).activeWhen(this::linkable));
         }
         addInventory(inventory, INVENTORY_Y);
         addDataSlots(data);
