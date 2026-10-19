@@ -7,5 +7,8 @@ gradlew text eol=lf
 *.jar binary
 *.png binary
 
+# cartridge-host as 1.0.0's jars download it from main (D221): byte for byte
+natives/** binary
+
 # D195: MAME for Cartridge: Arcade is over GitHub's 100 MB file limit
 arcade/cores/mame/*.zip filter=lfs diff=lfs merge=lfs -text

@@ -95,6 +95,12 @@ To check that a jar was built here from this source, with the [GitHub CLI](https
 gh attestation verify cartridge_mod-fabric-1.0.0+1.21.1.jar --repo NanoBunTV/Minecraft-Cartridge
 ```
 
+### `natives/` (for 1.0.0 only)
+The jars of Cartridge 1.0.0 download `cartridge-host` from this repository's [`natives/`](natives) folder on `main`,
+so it stays there, never changed, for as long as 1.0.0 is around. Nothing builds from it. Every CI run compares it
+with the host it just built from `sidecar/` and shows the result in its summary: until `sidecar/` changes, they are
+identical, byte for byte. Later versions download from their GitHub Release instead.
+
 ## Repository layout
 | Folder | What's there |
 |---|---|
@@ -104,6 +110,7 @@ gh attestation verify cartridge_mod-fabric-1.0.0+1.21.1.jar --repo NanoBunTV/Min
 | `stonecutter.properties.toml` | Mod metadata and dependency versions for each Minecraft version. |
 | `sidecar/` | `cartridge-host`'s C source and Zig build. |
 | `.github/workflows/` | The CI build that makes every release. |
+| `natives/` | `cartridge-host` as Cartridge 1.0.0 downloads it. Kept unchanged for those jars; nothing builds from it. |
 | `cores/`, `arcade/cores/` | The bundled libretro cores, each with its license and `SOURCE.md` (the exact upstream source). |
 | `models/` | Blockbench sources of the block and item models. |
 | `tools/` | Asset scripts (`sounds.py` makes every sound effect from scratch). |

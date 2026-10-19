@@ -100,6 +100,14 @@ jobs:
             echo '```'
             (cd sidecar/zig-out/natives && sha256sum */*)
             echo '```'
+            echo "### \`natives/\`, kept for the 1.0.0 jars (D221)"
+            echo "Compared with the cartridge-host this run built from \`sidecar/\`:"
+            echo '```'
+            for file in natives/*/*; do
+              built="sidecar/zig-out/$file"
+              if cmp -s "$file" "$built"; then echo "identical  $file"; else echo "differs    $file (sidecar/ changed since 1.0.0)"; fi
+            done
+            echo '```'
             echo "### Bundled libretro cores (third-party, unchanged; origin and exact commit in each SOURCE.md)"
             echo '```'
             for zip in cores/*/*.zip arcade/cores/mame/*.zip; do
